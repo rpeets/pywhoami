@@ -23,3 +23,14 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8080
+        env:
+          - name: USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: pywhoami-secret
+                key: username
+          - name: PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: pywhoami-secret
+                key: password
