@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pywhoami
+spec:
+  selector:
+    matchLabels:
+      app: pywhoami
+  template:
+    metadata:
+      labels:
+        app: pywhoami
+    spec:
+      containers:
+      - name: pywhoami
+        image: rpeets/pywhoami:1.2.0
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

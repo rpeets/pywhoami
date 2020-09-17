@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: pywhoami
+build:
+  artifacts:
+  - image: rpeets/pywhoami
+deploy:
+  kustomize:
+    paths:
+    - kustomize/base
+profiles:
+- name: pywhoami
+  deploy:
+    kustomize:
+      paths:
+      - kustomize/base/pywhoami
