@@ -4,13 +4,23 @@
 #### Setup Minikube
 ```
 :➜  minikube start --vm=true
+
+:➜  minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
 ```
 
 #### configure some minikube addons
 ```
-:➜  minikube addons enable metrics-server
+:➜  minikube addons enable metrics-server                                                                                                                                
+🌟  The 'metrics-server' addon is enabled
 
-:➜  minikube addons enable ingress       
+:➜  minikube addons enable ingress
+🌟  The 'ingress' addon is enabled
 
 :➜  minikube addons list
 |-----------------------------|----------|--------------|
